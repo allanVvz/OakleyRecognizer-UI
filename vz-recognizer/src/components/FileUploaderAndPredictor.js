@@ -13,7 +13,7 @@ const FileUploaderAndPredictor = () => {
   useEffect(() => {
     const loadSession = async () => {
       try {
-        const sess = await ort.InferenceSession.create("swin_oculos_model3.onnx");
+        const sess = await ort.InferenceSession.create("swin_oculos_model3_quantized.onnx");
         setSession(sess);
         console.log("Sessão ONNX carregada com sucesso!");
       } catch (error) {
