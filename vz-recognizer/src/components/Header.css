@@ -1,0 +1,56 @@
+/* Remove margens e paddings padrão */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: #111;
+    color: white;
+    align-items: center;
+    display: flex;
+    width: 100vw;
+    justify-content: center; /* Centraliza os itens */
+    padding: 10px 20px;
+    position: relative; /* Necessário para posicionamento absoluto da logo */
+} 
+
+.logo img {
+    width: 100px; /* Ajuste conforme necessário */
+    height: auto;
+    align-items: center;
+    align-self: center;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    position: absolute; /* Posiciona a logo de forma absoluta */
+}
+
+.nav-desktop {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-grow: 1; /* Faz com que o menu ocupe o espaço disponível */
+    justify-content: flex-start; /* Alinha o menu à esquerda */
+}
+
+.nav-desktop li {
+    display: inline;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-desktop a {
+    color: white;
+    text-decoration: none;
+    font-size: small;
+}

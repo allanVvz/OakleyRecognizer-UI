@@ -1,0 +1,9 @@
+/* Estilos para o componente de upload */
+.file-uploader {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(18, 18, 18, 0.7);
+    margin: 20px auto;
+    max-width: 500px;
+  }
