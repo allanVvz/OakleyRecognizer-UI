@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/OakleyRecognizer-UI/static/css/main.1c822dca.css",
+    "main.js": "/OakleyRecognizer-UI/static/js/main.edeb4748.js",
+    "static/js/453.d2001ae0.chunk.js": "/OakleyRecognizer-UI/static/js/453.d2001ae0.chunk.js",
+    "index.html": "/OakleyRecognizer-UI/index.html",
+    "main.1c822dca.css.map": "/OakleyRecognizer-UI/static/css/main.1c822dca.css.map",
+    "main.edeb4748.js.map": "/OakleyRecognizer-UI/static/js/main.edeb4748.js.map",
+    "453.d2001ae0.chunk.js.map": "/OakleyRecognizer-UI/static/js/453.d2001ae0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1c822dca.css",
+    "static/js/main.edeb4748.js"
+  ]
+}
