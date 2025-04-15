@@ -1,8 +1,8 @@
-// src/components/FileUploaderAndPredictor.js
+// src/components/FileUploaderAndPredictor.jsx
 import React, { useState } from "react";
 import "./FileUploader.css";
 
-const FileUploaderAndPredictor = () => {
+const FileUploaderAndPredictor = ({ setPredictionExternal }) => {
   const [file, setFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
   const [prediction, setPrediction] = useState("");
@@ -33,7 +33,6 @@ const FileUploaderAndPredictor = () => {
           canvas.toBlob(
             (blob) => {
               if (blob) {
-                // Cria um novo arquivo a partir do blob com extensão .jpg
                 const jpegFile = new File([blob], "converted.jpg", { type: "image/jpeg" });
                 resolve(jpegFile);
               } else {
@@ -67,7 +66,7 @@ const FileUploaderAndPredictor = () => {
       const formData = new FormData();
       formData.append("image", jpegFile);
 
-      // Faz a chamada para a API de inferência (ajuste a URL conforme necessário)
+      // Faz a chamada para a API de inferência
       const response = await fetch("https://minha-api-29487953624.us-east1.run.app/upload", {
         method: "POST",
         body: formData,
@@ -81,15 +80,21 @@ const FileUploaderAndPredictor = () => {
       // Interpreta o resultado da API (assumindo JSON com o campo "prediction")
       const result = await response.json();
       setPrediction(result.prediction);
+      if (setPredictionExternal) {
+        setPredictionExternal(result.prediction);
+      }
     } catch (error) {
       console.error("Erro na inferência:", error);
       setPrediction("Erro na inferência");
+      if (setPredictionExternal) {
+        setPredictionExternal("Erro na inferência");
+      }
     }
   };
 
   return (
     <div className="file-uploader">
-      <h2>Upload e Análise de Imagem</h2>
+      <h2>If you don't know which name is</h2>
       <input type="file" onChange={handleFileChange} />
       {previewUrl && (
         <div style={{ marginTop: "20px" }}>
@@ -104,6 +109,24 @@ const FileUploaderAndPredictor = () => {
           <h3>Resultado: {prediction}</h3>
         </div>
       )}
+
+      {/* Renderização condicional dos snippets do Shopify Buy Button */}
+      {prediction === "Juliet" ? (
+        <div className="shopify-snippet">
+          <h2>Oferta para Juliet</h2>
+          <div id="shopify-container-juliet"></div>
+        </div>
+      ) : prediction === "Radar" ? (
+        <div className="shopify-snippet">
+          <h2>Oferta para Radar</h2>
+          <div id="shopify-container-radar"></div>
+        </div>
+      ) : prediction ? (
+        <div className="shopify-snippet">
+          <h2>Oferta para outros</h2>
+          <div id="collection-component-1744675210201"></div>
+        </div>
+      ) : null}
     </div>
   );
 };
