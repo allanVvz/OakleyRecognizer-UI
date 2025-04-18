@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/OakleyRecognizer-UI/static/css/main.1c822dca.css",
-    "main.js": "/OakleyRecognizer-UI/static/js/main.edeb4748.js",
-    "static/js/453.d2001ae0.chunk.js": "/OakleyRecognizer-UI/static/js/453.d2001ae0.chunk.js",
-    "index.html": "/OakleyRecognizer-UI/index.html",
-    "main.1c822dca.css.map": "/OakleyRecognizer-UI/static/css/main.1c822dca.css.map",
-    "main.edeb4748.js.map": "/OakleyRecognizer-UI/static/js/main.edeb4748.js.map",
-    "453.d2001ae0.chunk.js.map": "/OakleyRecognizer-UI/static/js/453.d2001ae0.chunk.js.map"
+    "main.css": "./static/css/main.1c822dca.css",
+    "main.js": "./static/js/main.f13ae856.js",
+    "static/js/453.747e6b3e.chunk.js": "./static/js/453.747e6b3e.chunk.js",
+    "index.html": "./index.html",
+    "main.1c822dca.css.map": "./static/css/main.1c822dca.css.map",
+    "main.f13ae856.js.map": "./static/js/main.f13ae856.js.map",
+    "453.747e6b3e.chunk.js.map": "./static/js/453.747e6b3e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1c822dca.css",
-    "static/js/main.edeb4748.js"
+    "static/js/main.f13ae856.js"
   ]
 }

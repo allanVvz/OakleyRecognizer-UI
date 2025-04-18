@@ -106,7 +106,7 @@ const FileUploaderAndPredictor = ({ setPredictionExternal }) => {
       </button>
       {prediction && (
         <div className="result-box">
-          <h3>Resultado: {prediction}</h3>
+            <h3>Resultado: {prediction}</h3>
         </div>
       )}
 
