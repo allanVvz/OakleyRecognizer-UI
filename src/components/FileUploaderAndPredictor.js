@@ -1,8 +1,7 @@
-// src/components/FileUploaderAndPredictor.jsx
 import React, { useState } from "react";
 import "./FileUploader.css";
 
-const FileUploaderAndPredictor = ({ setPredictionExternal }) => {
+const FileUploaderAndPredictor = ({ setResult = () => {} }) => {
   const [file, setFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
   const [prediction, setPrediction] = useState("");
@@ -80,21 +79,22 @@ const FileUploaderAndPredictor = ({ setPredictionExternal }) => {
       // Interpreta o resultado da API (assumindo JSON com o campo "prediction")
       const result = await response.json();
       setPrediction(result.prediction);
-      if (setPredictionExternal) {
-        setPredictionExternal(result.prediction);
+      if (setResult) {
+        setResult(result.prediction);
       }
     } catch (error) {
       console.error("Erro na inferência:", error);
       setPrediction("Erro na inferência");
-      if (setPredictionExternal) {
-        setPredictionExternal("Erro na inferência");
+      if (setResult) {
+        setResult("Erro na inferência");
       }
     }
   };
 
   return (
     <div className="file-uploader">
-      <h2>If you don't know which name is</h2>
+      <h2>Descubra aqui!</h2>
+      <p>Selecione uma imagem para análise</p>
       <input type="file" onChange={handleFileChange} />
       {previewUrl && (
         <div style={{ marginTop: "20px" }}>
@@ -106,27 +106,10 @@ const FileUploaderAndPredictor = ({ setPredictionExternal }) => {
       </button>
       {prediction && (
         <div className="result-box">
-            <h3>Resultado: {prediction}</h3>
+          <h3>Resultado: {prediction}</h3>
         </div>
       )}
-
-      {/* Renderização condicional dos snippets do Shopify Buy Button */}
-      {prediction === "Juliet" ? (
-        <div className="shopify-snippet">
-          <h2>Oferta para Juliet</h2>
-          <div id="shopify-container-juliet"></div>
-        </div>
-      ) : prediction === "Radar" ? (
-        <div className="shopify-snippet">
-          <h2>Oferta para Radar</h2>
-          <div id="shopify-container-radar"></div>
-        </div>
-      ) : prediction ? (
-        <div className="shopify-snippet">
-          <h2>Oferta para outros</h2>
-          <div id="collection-component-1744675210201"></div>
-        </div>
-      ) : null}
+      
     </div>
   );
 };

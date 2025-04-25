@@ -14,11 +14,11 @@ function App() {
     <div className="app-container">
       <Header />
       <div className="banner"></div>
-      <h1 style={{ textAlign: "center" }}>What 'Lupa' are you looking for</h1>
+      <h1 style={{ textAlign: "center" }}>Não sabe o nome da lupa?</h1>
       {/* Passe a função setPrediction para atualizar o estado de prediction */}
-      <FileUploaderAndPredictor setPrediction={setPrediction} />
+      <FileUploaderAndPredictor setResult={setPrediction} />
       {/* Passe o valor de prediction para o componente que mostra o Shopify Buy Button */}
-      <ShopifyBuyComponent prediction={prediction} />
+      {prediction && <ShopifyBuyComponent prediction={prediction} />}
     </div>
   );
 }
