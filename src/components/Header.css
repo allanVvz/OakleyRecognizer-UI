@@ -1,56 +1,105 @@
-/* Remove margens e paddings padrão */
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
+/* estilos gerais */
 .header {
-    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+    background: #1a1a1a;
     color: white;
-    align-items: center;
-    display: flex;
-    width: 100vw;
-    justify-content: center; /* Centraliza os itens */
-    padding: 10px 20px;
-    position: relative; /* Necessário para posicionamento absoluto da logo */
-} 
+  }
+  
 
-.logo img {
-    width: 100px; /* Ajuste conforme necessário */
-    height: auto;
-    align-items: center;
-    align-self: center;
-    flex-direction: column;
-}
-
-.logo {
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .logo img {
+    height: 55px;
+  }
+  
+  
+  /* menu desktop */
+  .nav-desktop ul {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    position: absolute; /* Posiciona a logo de forma absoluta */
-}
-
-.nav-desktop {
-    display: flex;
+    gap: 1rem;
     list-style: none;
-    gap: 20px;
-    flex-grow: 1; /* Faz com que o menu ocupe o espaço disponível */
-    justify-content: flex-start; /* Alinha o menu à esquerda */
-}
-
-.nav-desktop li {
-    display: inline;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: bold;
+  }
+  
+  .nav-desktop a {
     color: white;
     text-decoration: none;
-}
-
-.nav-desktop a {
+  }
+  
+  /* botão hamburger (esconde no desktop) */
+  .hamburger {
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    color: white;
+    display: none;
+    cursor: pointer;
+  }
+  
+  /* sidebar off-canvas (mobile) */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -550px;
+    width: 250px;
+    height: 100%;
+    background: #000000;
+    color: white;
+    padding: 1rem;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+  
+  .close-btn {
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: white;
+    float: right;
+    cursor: pointer;
+  }
+  
+  .nav-mobile ul {
+    list-style: none;
+    padding: 2rem 0 0;
+  }
+  
+  .nav-mobile li {
+    margin: 1rem 0;
+  }
+  
+  .nav-mobile a {
     color: white;
     text-decoration: none;
-    font-size: small;
-}
+    font-size: 1.2rem;
+  }
+  
+  /* media query para mobile */
+  @media (max-width: 768px) {
+    .nav-desktop {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+    }
+
+    .header {
+        height: 50px;
+      }
+      .logo img {
+        height: 48px;
+      }
+    
+    
+  }
+  
