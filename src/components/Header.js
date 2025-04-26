@@ -44,10 +44,16 @@ const Header = () => {
           ×
         </button>
         <nav className="nav-mobile">
-          <ul>
-            <li><a href="#" onClick={() => setOpen(false)}>Home</a></li>
-            <li><a href="#" onClick={() => setOpen(false)}>About</a></li>
-            <li><a href="#" onClick={() => setOpen(false)}>Contact</a></li>
+        <ul>
+        <li><a href="https://vzforeal.com/" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+          Home
+        </a></li>
+        <li><a href="https://vzforeal.com/collections/all" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+          Catálogo
+        </a></li>
+        <li><a href="https://vzforeal.com/pages/contact" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+          Contato
+        </a></li>
           </ul>
         </nav>
       </aside>
